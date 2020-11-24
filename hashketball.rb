@@ -153,13 +153,13 @@ end
 def team_colors(team_name)
   team_colors = []
   game_hash.each do |opponents, team_stats|
-    if team_stats[:team_name] == team_name
-    team_stats[:colors].map do |colors|
+      if team_stats[:team_name] == team_name
+      team_stats[:colors].map do |colors|
       team_colors << colors
-    end
+      end
     end
   end
-  return team_colors
+ return team_colors
 end
 
 
@@ -167,7 +167,7 @@ def team_names
   team_names = []
     game_hash.each do |opponents, team_stats|
       team_names << team_stats[:team_name]
-  end
+    end
   return team_names
 end
 
@@ -178,10 +178,10 @@ def player_numbers(team_name)
     if team_stats[:team_name] == team_name
       team_stats[:players].each do |player|
       jersey_numbers << player[:number]
-    end
+      end
     end
   end
-  return jersey_numbers
+ return jersey_numbers
 end
 
 
@@ -192,11 +192,11 @@ def player_stats(player_name)
       if player[:player_name] == player_name
         player.each do |key, value|
         player_data[key] = value
+        end
       end
-      end
-   end
+    end
   end
-  return player_data
+ return player_data
 end
 
 
@@ -211,15 +211,13 @@ def big_shoe_rebounds
       end
     end
   end
-   number_of_rebounds = ""
-  game_hash.each do |opponent, team_stats|
+  number_of_rebounds = ""
+  game_hash.each do |opponents, team_stats|
     team_stats[:players].each do |player|
       if player[:player_name] == big_player
       number_of_rebounds = player[:rebounds]
       end
     end
   end
-  return number_of_rebounds
+ return number_of_rebounds
 end
-
-#  return number_of_rebounds
