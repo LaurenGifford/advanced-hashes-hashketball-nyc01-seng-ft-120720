@@ -210,12 +210,16 @@ def big_shoe_rebounds
        big_shoe = player[:shoe]
        big_player = player[:player_name]
      end
-     if player[:player_name] == big_player
+     binding.pry
+    end
+  end
+  
+  game_hash.each do |opponent, team_stats|
+    team_stats[:players].each do |player|
+      if player[:player_name] == big_player
       number_of_rebounds = player[:rebounds]
      end
-     binding.pry
-  end
-#  binding.pry
+      end
   end
   return number_of_rebounds
 end
