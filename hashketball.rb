@@ -199,17 +199,16 @@ def player_stats(player_name)
   return player_data
 end
 
-#require 'pry'
+
 def big_shoe_rebounds
   big_shoe = 0
   big_player = ""
   game_hash.each do |opponents, team_stats|
     team_stats[:players].each do |player|
-     if player[:shoe] > big_shoe
+      if player[:shoe] > big_shoe
        big_shoe = player[:shoe]
        big_player = player[:player_name]
-     end
-#     binding.pry
+      end
     end
   end
    number_of_rebounds = ""
