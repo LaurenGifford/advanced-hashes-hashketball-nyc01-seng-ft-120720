@@ -199,9 +199,8 @@ def player_stats(player_name)
   return player_data
 end
 
-require 'pry'
+#require 'pry'
 def big_shoe_rebounds
-  number_of_rebounds = ""
   big_shoe = 0
   big_player = ""
   game_hash.each do |opponents, team_stats|
@@ -210,16 +209,16 @@ def big_shoe_rebounds
        big_shoe = player[:shoe]
        big_player = player[:player_name]
      end
-     binding.pry
+#     binding.pry
     end
   end
-  
+   number_of_rebounds = ""
   game_hash.each do |opponent, team_stats|
     team_stats[:players].each do |player|
       if player[:player_name] == big_player
       number_of_rebounds = player[:rebounds]
-     end
       end
+    end
   end
   return number_of_rebounds
 end
