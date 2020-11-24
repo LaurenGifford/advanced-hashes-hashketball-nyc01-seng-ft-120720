@@ -211,12 +211,13 @@ def big_shoe_rebounds
        big_player = player[:player_name]
      end
      if player[:player_name] == big_player
-      return player[:rebounds]
+      number_of_rebounds = player[:rebounds]
      end
      binding.pry
   end
 #  binding.pry
   end
+  return number_of_rebounds
 end
 
 #  return number_of_rebounds
